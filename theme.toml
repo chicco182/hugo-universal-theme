@@ -3,8 +3,8 @@ license = "MIT"
 licenselink = "https://github.com/devcows/hugo-universal-theme/blob/master/LICENSE"
 description = "A port of the Universal theme"
 homepage = "//github.com/devcows/hugo-universal-theme"
-tags = ["blog", "company", "portfolio", "projects", "minimal", "responsive"]
-features = ["blog", "themes", "disqus", "minimal", "responsive"]
+tags = ["blog", "articoli", "recensioni", "progetti", "minimal", "responsive"]
+features = ["blog", "tech", "disqus", "minimal", "responsive"]
 min_version = 0.15
 
 [author]

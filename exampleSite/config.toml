@@ -73,6 +73,7 @@ paginate = 10
     defaultKeywords = ["devows", "hugo", "go"]
     mainSections = ["articoli"]
     defaultDescription = "Site template made by devcows using hugo"
+    cloudinary_base_url = "https://res.cloudinary.com/stefanotech/image/upload"
 
     # Social media
     facebook_site = "" # the Facebook handle of your site ('https://www.facebook.com/HANDLE')

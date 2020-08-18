@@ -7,7 +7,7 @@ tags = ["microsoft", "surface", "surface duo"]
 title = "Nuovo Microsoft Surface Duo"
 
 +++
-Prova testo.
+Prova testo. kink
 
 ## Introduction to Go Templates
 

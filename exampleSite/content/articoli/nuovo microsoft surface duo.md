@@ -7,15 +7,7 @@ tags = ["microsoft", "surface", "surface duo"]
 title = "Nuovo Microsoft Surface Duo"
 
 +++
-Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for
-its template engine. It is an extremely lightweight engine that provides a very
-small amount of logic. In our experience that it is just the right amount of
-logic to be able to create a good static website. If you have used other
-template systems from different languages or frameworks you will find a lot of
-similarities in go templates.
-
-This document is a brief primer on using go templates. The [go docs][gohtmltemplate]
-provide more details.
+Prova testo.
 
 ## Introduction to Go Templates
 
@@ -25,7 +17,7 @@ One consequence of this simplicity is that go templates parse very quickly.
 
 A unique characteristic of go templates is they are content aware. Variables and
 content will be sanitized depending on the context of where they are used. More
-details can be found in the [go docs][gohtmltemplate].
+details can be found in the [go docs](http://golang.org/pkg/html/template/).
 
 ## Basic Syntax
 
@@ -54,7 +46,6 @@ Accessing the Page Parameter "bar"
 
     {{ if or (isset .Params "alt") (isset .Params "caption") }} Caption {{ end }}
 
-
 ## Variables
 
 Each go template has a struct (object) made available to it. In hugo each
@@ -70,7 +61,6 @@ Variables can also be defined and referenced.
 
     {{ $address := "123 Main St."}}
     {{ $address }}
-
 
 ## Functions
 
@@ -96,7 +86,6 @@ the /layout/ directory within Hugo.
 **Example:**
 
     {{ template "chrome/header.html" . }}
-
 
 ## Logic
 
@@ -131,7 +120,6 @@ range.
 
 If, else, with, or, & and provide the framework for handling conditional
 logic in Go Templates. Like range, each statement is closed with `end`.
-
 
 Go Templates treat the following values as false:
 
@@ -216,7 +204,6 @@ Could be rewritten as
     Stuff Here
     {{ end }}
 
-
 ## Context (aka. the dot)
 
 The most easily overlooked concept to understand about go templates is that {{ . }}
@@ -246,7 +233,6 @@ data of each specific piece of content. You can define any values of any
 type (supported by your front matter/config format) and use them however
 you want to inside of your templates.
 
-
 ## Using Content (page) Parameters
 
 In each piece of content you can provide variables to be used by the
@@ -259,17 +245,15 @@ of some pages to turn off the TOC from being displayed.
 
 Here is the example front matter:
 
-```
----
-title: "Permalinks"
-date: "2013-11-18"
-aliases:
-  - "/doc/permalinks/"
-groups: ["extras"]
-groups_weight: 30
-notoc: true
----
-```
+    ---
+    title: "Permalinks"
+    date: "2013-11-18"
+    aliases:
+      - "/doc/permalinks/"
+    groups: ["extras"]
+    groups_weight: 30
+    notoc: true
+    ---
 
 Here is the corresponding code inside of the template:
 
@@ -279,9 +263,8 @@ Here is the corresponding code inside of the template:
         </div>
       {{ end }}
 
-
-
 ## Using Site (config) Parameters
+
 In your top-level configuration file (eg, `config.yaml`) you can define site
 parameters, which are values which will be available to you in chrome.
 
@@ -300,36 +283,26 @@ you would declare it to be HTML-safe, so that the HTML entity is not escaped
 again.  This would let you easily update just your top-level config file each
 January 1st, instead of hunting through your templates.
 
-```
-{{if .Site.Params.CopyrightHTML}}<footer>
-<div class="text-center">{{.Site.Params.CopyrightHTML | safeHtml}}</div>
-</footer>{{end}}
-```
+    {{if .Site.Params.CopyrightHTML}}<footer>
+    <div class="text-center">{{.Site.Params.CopyrightHTML | safeHtml}}</div>
+    </footer>{{end}}
 
 An alternative way of writing the "if" and then referencing the same value
 is to use "with" instead. With rebinds the context `.` within its scope,
 and skips the block if the variable is absent:
 
-```
-{{with .Site.Params.TwitterUser}}<span class="twitter">
-<a href="https://twitter.com/{{.}}" rel="author">
-<img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}"
- alt="Twitter"></a>
-</span>{{end}}
-```
+    {{with .Site.Params.TwitterUser}}<span class="twitter">
+    <a href="https://twitter.com/{{.}}" rel="author">
+    <img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}"
+     alt="Twitter"></a>
+    </span>{{end}}
 
 Finally, if you want to pull "magic constants" out of your layouts, you can do
 so, such as in this example:
 
-```
-<nav class="recent">
-  <h1>Recent Posts</h1>
-  <ul>{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
-    <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
-  {{end}}</ul>
-</nav>
-```
-
-
-[go]: <http://golang.org/>
-[gohtmltemplate]: <http://golang.org/pkg/html/template/>
+    <nav class="recent">
+      <h1>Recent Posts</h1>
+      <ul>{{range first .Site.Params.SidebarRecentLimit .Site.Recent}}
+        <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
+      {{end}}</ul>
+    </nav>

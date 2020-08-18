@@ -1,12 +1,12 @@
 +++
-title = "Nuovo Microsoft Surface Duo"
-date = "2020-08-18T14:21:08+02:00"
-tags = ["microsoft", "surface", "surface duo"]
-categories = ["smartphone"]
-banner = "img/banners/banner-2.jpg"
 author = "Stefano Valentini"
-+++
+banner = "https://res.cloudinary.com/stefanotech/image/upload/v1597760963/stefanotech/microsoft-surface-duo.webp"
+categories = ["smartphone"]
+date = 2020-08-18T12:21:08Z
+tags = ["microsoft", "surface", "surface duo"]
+title = "Nuovo Microsoft Surface Duo"
 
++++
 Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for
 its template engine. It is an extremely lightweight engine that provides a very
 small amount of logic. In our experience that it is just the right amount of

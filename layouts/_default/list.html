@@ -27,7 +27,7 @@
                                       <a href="{{ .Permalink }}">
                                           {{ if .Params.banner }}
                                           <!-- <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt=""> -->
-                                          <img src="{{ .Site.Params.cloudinary_base_url }}/{{ .Site.Params.thumbnails | relURL}}" />
+                                          <img src="{{ .Site.Params.cloudinary_base_url | relURL}}{{ .Params.banner}}" />
                                           {{ else }}
                                           <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="">
                                           {{ end }}

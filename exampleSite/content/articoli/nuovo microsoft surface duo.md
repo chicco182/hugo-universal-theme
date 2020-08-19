@@ -1,6 +1,6 @@
 +++
 author = "Stefano Valentini"
-banner = "/v1597760963/stefanotech/microsoft-surface-duo.webp"
+banner = "v1597760963/stefanotech/microsoft-surface-duo.webp"
 categories = ["smartphone"]
 date = 2020-08-18T12:21:08Z
 tags = ["microsoft", "surface", "surface duo"]

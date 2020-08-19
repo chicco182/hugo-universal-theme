@@ -74,6 +74,7 @@ paginate = 10
     mainSections = ["articoli"]
     defaultDescription = "Site template made by devcows using hugo"
     cloudinary_base_url = "https://res.cloudinary.com/stefanotech/image/upload"
+    thumbnail_post = "/c_scale,w_331/"
 
     # Social media
     facebook_site = "" # the Facebook handle of your site ('https://www.facebook.com/HANDLE')
